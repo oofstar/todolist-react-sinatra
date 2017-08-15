@@ -33,13 +33,20 @@ class TaskContainer extends React.Component {
   }
 
   handleFormSubmit(event) {
+    let tasks = this.state.tasks
     event.preventDefault();
     fetch('/api/v1/tasks', { method: 'POST', credentials: 'same-origin', body: this.state.newTask})
-      .then(response => this.getTasks())
-      .then(response => this.handleClearForm())
+      .then(response => response.json())
+      .then(task => {
+        let new_task_list = tasks.push(task)
+        this.setState(tasks: new_task_list)
+      })
+      .then(() => {
+        this.handleClearForm()
+      })
   }
 
-  handleClearForm(event) {
+  handleClearForm() {
     this.setState({
       newTask: ''
     })
