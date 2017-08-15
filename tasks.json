@@ -1,0 +1,20 @@
+{
+  "tasks": [
+    {
+      "id": 1,
+      "name": "Destroy the Nexus"
+    },
+    {
+      "id": 2,
+      "name": "Catch em all"
+    },
+    {
+      "id": 3,
+      "name": "Ink the most turf"
+    },
+    {
+      "id": 4,
+      "name": "Defeat Ganon"
+    }
+  ]
+}
